@@ -37,7 +37,7 @@ class DotDrop
       Item.new(Dir.home + "/." + name).import
     else
       Dir::glob(Dir.home + "/.?*").each do |target|
-        Addable.new(target).run
+        Item.new(target).import
       end
     end
   end
