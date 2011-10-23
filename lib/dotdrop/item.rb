@@ -41,7 +41,7 @@ class DotDrop
             say("Could not import <%= color('#{self.name}', :red) %> because it is already a symlink")
           end
         else
-          if ask("<%= color('Dropbox already has a #{name}', :red) %> Do you want to replace it with <%= color('#{self.target}', :green) %>? This will <%= color('remove', :red) %> #{self.destination}!!!  ")
+          if ask("<%= color('Dropbox already has a #{name}', :red) %> Do you want to replace it with <%= color('#{self.target}', :green) %>? This will <%= color('remove', :red) %> #{self.destination}!!!  ").downcase.include?("y")
             say "Woops not done yet. Plz remove #{self.destination} yourself"
           end
         end
